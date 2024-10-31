@@ -1,0 +1,15 @@
+@60
+00048000
+#Return instructions. Could move it to hardware
+57BC0001
+3FBE0000
+7FC00000
+#2nd Interrupt
+@6C
+#Push PC to Interrupt Pointer stack
+77BE0000
+8000001F
+#Return instructions. Could move it to hardware
+57BC0001
+3FBE0000
+7FC00000

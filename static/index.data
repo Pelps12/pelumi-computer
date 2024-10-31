@@ -1,0 +1,64 @@
+@60
+00048000
+#Return instructions. Could move it to hardware
+57BC0001
+3FBE0000
+7FC00000
+#2nd Interrupt
+@6C
+#Push PC to Interrupt Pointer stack
+77BE0000
+8000001F
+#Return instructions. Could move it to hardware
+57BC0001
+3FBE0000
+7FC0000000000060
+0000006C@0
+000000
+000001
+00000A
+000000
+000000
+000000
+000000
+@10
+000014
+@20
+000016
+#This is my first ever interrupt handler :)
+@60
+00048000
+#Return instructions. Could move it to hardware
+57BC0001
+3FBE0000
+7FC00000
+#2nd Interrupt
+@6C
+#Push PC to Interrupt Pointer stack
+77BE0000
+8000001F
+#Return instructions. Could move it to hardware
+57BC0001
+3FBE0000
+7FC00000
+@7A
+77BE0000
+77BE0000
+77BE0000
+77BE0000
+@100
+577c01f4
+70000000
+57420000
+57440001
+5746000a
+40000
+31060003
+1044000
+48000105
+6000010a
+8000001e
+70000000
+@199
+57580100
+7b000000
