@@ -32,6 +32,8 @@
 
 	let worker: Worker | null = null;
 
+	let text = '';
+
 	let workerResponded = false;
 
 	function assert(x: boolean) {
@@ -545,10 +547,11 @@
 				console.log('GOT TO PRINT', outputElement);
 
 				return (...args: any[]): void => {
-					const text = args.join(' ');
-					console.log(text);
+					const new_text = args.join(' ');
+					console.log(new_text);
+					text += new_text + '\n';
 					if (outputElement) {
-						outputElement.value += text + '\n';
+						outputElement.value += new_text + '\n';
 						outputElement.scrollTop = outputElement.scrollHeight;
 					}
 				};
@@ -638,6 +641,10 @@
 	<Button on:click={() => reset()} class="my-3">Load Computer</Button>
 	<div id="status" class="font-semibold" bind:this={statusElement}>{moduleStatus}</div>
 	<div id="spinner" bind:this={spinnerElement}></div>
-	<Textarea class="h-[85vh] resize font-[VT323]" id="output" readonly></Textarea>
+	<Textarea
+		class="h-[85vh] resize bg-gray-200 p-4 pl-6 text-left font-[VT323] text-sm "
+		id="output"
+		readonly
+	></Textarea>
 	<canvas id="canvas"></canvas>
 </div>
