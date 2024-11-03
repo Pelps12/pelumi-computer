@@ -1,4 +1,4 @@
-import { PUBLIC_URL } from '$env/static/private';
+import { PUBLIC_URL } from '$env/static/public';
 import type { RequestHandler } from '@sveltejs/kit';
 export const GET: RequestHandler = async ({ setHeaders }) => {
 	const response = await fetch(`${PUBLIC_URL}/index.js`);
