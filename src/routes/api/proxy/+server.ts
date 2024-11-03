@@ -1,7 +1,7 @@
-import { env } from '$env/dynamic/private';
+import { PUBLIC_URL } from '$env/static/private';
 import type { RequestHandler } from '@sveltejs/kit';
 export const GET: RequestHandler = async ({ setHeaders }) => {
-	const response = await fetch(`${env.PUBLIC_URL}/index.js`);
+	const response = await fetch(`${PUBLIC_URL}/index.js`);
 
 	setHeaders({
 		'cache-control': 'max-age=60'
